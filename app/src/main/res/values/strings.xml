@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="correct_answer">Правильно!</string>
+    <string name="incorrect_answer">Не правильно!</string>
+    <string name="question1">Солнце - это звезда?</string>
+    <string name="question2">Арбуз это ягода?</string>
+    <string name="question3">Каспийское море - это озеро?</string>
+    <string name="question4">Дельфин это рыба?</string>
+    <string name="question5">Пермь столица РФ?</string>
+    <string name="get_answer">Посмотреть ответ</string>
+</resources>
