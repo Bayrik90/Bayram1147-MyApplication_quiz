@@ -3,6 +3,7 @@ package com.example.myapplication;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -24,7 +25,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Log.d("MainActivity","onCreate() called");
+        if(savedInstanceState !=null){
+            questionIndex=savedInstanceState.getInt("questionIndex",0);
+        }
         yesBtn=findViewById(R.id.yesBtn);//2 R-это папка ресурс,в кот находим id и через него выходим на на йесбтн
         noBtn=findViewById(R.id.noBtn);//5
         textView = findViewById(R.id.textView);
@@ -49,5 +53,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, R.string.incorrect_answer, Toast.LENGTH_SHORT).show();
         questionIndex = (questionIndex+1)%questions.length;
         textView.setText(questions[questionIndex].getQuestionText());
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("questionIndex",questionIndex);
     }
 }
